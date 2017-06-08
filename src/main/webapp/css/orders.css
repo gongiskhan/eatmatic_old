@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    -moz-box-sizing: border-box;
+    /* box-sizing: border-box; */
+    text-transform: uppercase;
+}
+html, body {
+    height: 100%;
+    width: 100%;
+    padding:0;
+    float:none;
+    clear:both;
+}
+.button {
+    background-color: #007cb6; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+body {
+    font: normal 22px/22px 'Neucha', sans-serif;
+    padding:0;
+    display:inline-block;
+    float:none;
+    clear:both;
+}
+.ui-content {
+    padding-bottom: 3px !important;
+    max-height: 100% !important;
+    display:inline-block;
+    width:100%;
+    float:none;
+    clear:both;
+}
+#activeOrders{
+    padding:0;
+    margin-left:0.1em;
+    display:inline-block;
+    position:absolute;
+    top:0;
+    left:0;
+    float:none;
+    clear:both;
+    width:100%;
+    font-size: 1.5em;
+}
+#orderMenu{
+    display:inline-block;
+    border:0.1em ridge grey;
+    float:none;
+    clear:both;
+    vertical-align:top;
+    position:absolute;
+    top:90%;
+    left:85%;
+}
+#orderMenu a.orderMenuItem{
+    display:block;
+    width: 4em;
+    border: 0.1em solid white;
+}
+div.orderContainer{
+    top:0;
+    display:inline-table;
+    width: 23%;
+    border: 0.2em ridge gray;
+    text-align: left;
+    padding:0.1em;
+    margin:0;
+}
+h3.orderNumber{
+    margin-top:0.2em;
+    margin-bottom: 1em;
+    font-size:1em;
+}
+h3 span.tableNum{
+    float:left;
+}
+h3 span.serveAt{
+    float:right;
+}
+a.doneButton{
+    border: 0.1em dashed white;
+    margin: 0.1em 0 0 0.5em;
+    height: 1.1em;
+    width: 33%;
+    padding:1em;
+    vertical-align:top;
+    float:right;
+}
+span.orderDate, span.orderRef{
+    font-size: 0.5em;
+}
+
+div.orderItemsTable{
+    width: 92%;
+    border: 0.1em solid gray;
+    padding: 0.2em;
+}
+div.orderItemsTable div.thead{
+    width:100%;
+    text-align:center;
+    font-size: 0.7em;
+    font-weight:bold;
+    border-bottom: 0.1em solid gray;
+    margin-bottom: 0.5em;
+}
+div.orderItemsTable div.thead span{
+    display: inline-block;
+}
+div.orderItemsTable span.nome{
+    width:80%;
+}
+div.orderItemsTable span.qtd{
+    width:18%;
+}
+div.orderItemsTable div.tbody span{
+    margin-bottom:0.2em;
+}
+div.orderItemsTable div.tbody .tr{
+    width: 100%;
+}
+div.orderItemsTable div.tbody .tr span{
+    display: inline-block;
+    text-align: center;
+    font-size:0.9em;
+}
+
+div.orderItemsTable div.tbody .tr span:nth-child(2){
+    border-left: 0.1em dotted black;
+}
+
+div.orderHistoryTable{
+    with: 99%;
+    height: 100%;
+    margin-top:0.1em;
+    border: 0.2em ridge grey;
+}
+
+div.orderHistoryTable div.thead{
+    border-bottom: 0.1em solid grey;
+    padding: 0.4em;
+}
+
+div.orderHistoryTable div.thead span, div.orderHistoryTable div.tbody span{
+    display:inline-block;
+    width: 19.2%;
+    border-right: 0.1em solid grey;
+    text-align: center;
+    vertical-align: top;
+}
+
+div.orderHistoryTable div.tbody span{
+    padding: 0.2em;
+}
+
+div.orderHistoryTable div.tbody span{
+    font-size: 0.6em;
+    border-top: 0.1em solid grey;
+    border-right: none;
+}
+
+div.orderHistoryTable div.tbody span.items{
+    font-size: 0.4em;
+}
