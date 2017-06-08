@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Gostinho Caseiro</title>
+    <meta charset="utf-8">
+    <meta code="viewport" content="width=device-width, initial-scale=1">
+    <meta code="mobile-web-app-capable" content="yes">
+    <!--<link href="css/jquery.mobile-1.4.4.min.css" rel="stylesheet" type="text/css"/>-->
+    <!--<link href="css/style.css" rel="stylesheet" type="text/css" />-->
+    <link href="css/ementa.css" rel="stylesheet" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Neucha' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+<div class="container" data-role="page" id="indexPage">
+    <div data-role="header">
+        <h1 class="logo"><a href="index.html" class="loadHome"><img src="img/logo_gostinho.jpg"></a></h1>
+    </div>
+    <div data-role="content" id="content"></div>
+    <br/><br/>
+</div>
+<script type="text/javascript" src="js/jquery.js"></script>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).on("deviceready", function() {
+        console.log('deviceready fired');
+        window.isDeviceReady = true;
+    });
+    $(document).on("mobileinit", function() {
+        console.log('mobileinit fired');
+        $.mobile.page.prototype.options.addBackBtn = true;
+        $.mobile.defaultPageTransition = 'none';
+        $.mobile.defaultDialogTransition = 'fade';
+        //$.mobile.useFastClick  = false;
+        $.mobile.allowCrossDomainPages = true;
+        //$.mobile.autoInitializePage = false;
+        $.mobile.phonegapNavigationEnabled = true;
+        $.mobile.buttonMarkup.hoverDelay = 0;
+
+        function init(){
+            console.log('INIT');
+
+            window.App.init(function(){
+                $('.container').css({opacity: 1, visibility: 'visible'});
+            });
+        }
+        $(function(){
+            console.log('DOM ready');
+            if( (typeof window.isDeviceReady != 'undefined' && window.isDeviceReady)
+                 || (typeof window.device != 'undefined' && typeof window.device.platform != 'undefined' && !window.device.platform) )
+                init();
+            else
+                document.addEventListener("deviceready", init, false);
+
+        });
+    });
+</script>
+<!--<script type="text/javascript" src="cordova.js"></script>-->
+
+<script type="text/javascript" src="js/energize.js"></script>
+<!--<script type="text/javascript" src="js/jquery-mobile.js"></script>-->
+<script type="text/javascript" src="js/retina.js"></script>
+<script type="text/javascript" src="js/i18n.js" ></script>
+<script type="text/javascript" src="js/ementa.js" ></script>
+
+<!--<script src="js/pouchdb.js"></script>-->
+
+<script type="text/javascript">
+
+    $(function(){
+        window.App.init(function(){
+            $('.container').css({opacity: 1, visibility: 'visible'});
+            $('.container').css('padding-top','5px');
+        });
+    });
+</script>
+
+</body>
+</html>

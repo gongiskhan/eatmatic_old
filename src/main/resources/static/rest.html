@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>EatMatic</title>
+    <meta charset="utf-8">
+    <meta code="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/jquery.mobile-1.4.4.min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Neucha' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+<div class="container" data-role="page" id="indexPage">
+<!--
+    <ul data-role="panel" id="menu">
+        <a href="" data-role="button" data-inline="true" data-mini="true" class="back" data-rel="back"></a>
+        <li class="menuLink"><a href="index.html?loadContent=home">Home</a></li>
+        <li class="menuLink"><a href="index.html?loadContent=plans">Available Plans</a></li>
+        <li class="menuLink"><a href="index.html?loadContent=plan1">My Plan Info</a></li>
+    </ul>
+-->
+    <div data-role="header">
+<!--  	  <a href="#menu" data-role="button" data-inline="true" data-mini="true" class="menu"></a>-->
+      <h1 class="logo"><a href="index.html" class="loadHome"><img src="img/logo.png"></a><span id="logoTitle">RestMatic</span></h1>
+    </div>
+    <div data-role="content" id="content"></div>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).on("deviceready", function() {
+        console.log('deviceready fired');
+        window.isDeviceReady = true;
+    });
+    $(document).on("mobileinit", function() {
+        console.log('mobileinit fired');
+        $.mobile.page.prototype.options.addBackBtn = true;
+        $.mobile.defaultPageTransition = 'none';
+        $.mobile.defaultDialogTransition = 'fade';
+        //$.mobile.useFastClick  = false;
+        $.mobile.allowCrossDomainPages = true;
+        //$.mobile.autoInitializePage = false;
+        $.mobile.phonegapNavigationEnabled = true;
+        $.mobile.buttonMarkup.hoverDelay = 0;
+
+        function init(){
+            console.log('INIT');
+
+            //Nasty fix for older android. Spent to much time on it already... sorry future me.
+            if(typeof window.device != 'undefined' && typeof window.device.platform != 'undefined' && window.device.platform == 'Android' && window.device.version.substring(0, 1) < 4)
+                $('.ui-mobile .ui-page').css('padding-top','58px');
+                $('.container').css('padding-top','58px');
+
+            window.App.init(function(){
+                $('.container').css({opacity: 1, visibility: 'visible'});
+            });
+        }
+        $(function(){
+            console.log('DOM ready');
+            if( (typeof window.isDeviceReady != 'undefined' && window.isDeviceReady)
+                 || (typeof window.device != 'undefined' && typeof window.device.platform != 'undefined' && !window.device.platform) )
+                init();
+            else
+                document.addEventListener("deviceready", init, false);
+
+        });
+    });
+</script>
+<!--<script type="text/javascript" src="cordova.js"></script>-->
+
+<script type="text/javascript" src="js/energize.js"></script>
+<script type="text/javascript" src="js/jquery-mobile.js"></script>
+<script type="text/javascript" src="js/retina.js"></script>
+<script type="text/javascript" src="js/i18n.js" ></script>
+<script type="text/javascript" src="js/index.js" ></script>
+<!--<script src="js/pouchdb.js"></script>-->
+
+<script type="text/javascript">
+
+    $(function(){
+        window.App.init(function(){
+            $('.container').css({opacity: 1, visibility: 'visible'});
+            $('.container').css('padding-top','58px');
+        });
+    });
+</script>
+
+</body>
+</html>
