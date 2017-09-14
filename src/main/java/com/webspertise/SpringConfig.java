@@ -17,7 +17,7 @@ import java.util.Locale;
  * Created by ggomes on 13-09-2016.
  */
 @Configuration
-@Import(value = {SecurityConfig.class})
+//@Import(value = {SecurityConfig.class})
 public class SpringConfig {
 
     @Bean
